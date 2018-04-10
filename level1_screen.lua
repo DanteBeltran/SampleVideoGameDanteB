@@ -1,8 +1,9 @@
 -----------------------------------------------------------------------------------------
 --
 -- level1_screen.lua
--- Created by: Your Name
--- Date: Month Day, Year
+-- Created by: Dante B
+-- Special thanks to Wal Wal for helping in the design of this framework.
+-- Date: 2018-04-10
 -- Description: This is the level 1 screen of the game.
 -----------------------------------------------------------------------------------------
 

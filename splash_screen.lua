@@ -1,8 +1,9 @@
 -----------------------------------------------------------------------------------------
 --
 -- splash_screen.lua
--- Created by: Your Name
--- Date: Month Day, Year
+-- Created by: Dante B
+-- Special thanks to Wal Wal for helping in the design of this framework.
+-- Date: 2018-04-10
 -- Description: This is the splash screen of the game. It displays the 
 -- company logo that...
 -----------------------------------------------------------------------------------------
@@ -24,9 +25,9 @@ local scene = composer.newScene( sceneName )
  
 -- The local variables for this scene
 local beetleship
-local scrollXSpeed = 8
+local scrollXSpeed = 17
 local scrollYSpeed = -3
-local jungleSounds = audio.loadSound("Sounds/animals144.mp3")
+local powerSound = audio.loadSound("Sounds/power sound effect.mp3")
 local jungleSoundsChannel
 
 --------------------------------------------------------------------------------------------
@@ -58,7 +59,7 @@ function scene:create( event )
     display.setDefault("background", 0, 0, 0)
 
     -- Insert the beetleship image
-    beetleship = display.newImageRect("Images/beetleship.png", 200, 200)
+    beetleship = display.newImageRect("Images/beetleship.png", 1000, 500)
 
     -- set the initial x and y position of the beetleship
     beetleship.x = 100
@@ -90,7 +91,7 @@ function scene:show( event )
 
     elseif ( phase == "did" ) then
         -- start the splash screen music
-        jungleSoundsChannel = audio.play(jungleSounds )
+        jungleSoundsChannel = audio.play(powerSound )
 
         -- Call the moveBeetleship function as soon as we enter the frame.
         Runtime:addEventListener("enterFrame", moveBeetleship)

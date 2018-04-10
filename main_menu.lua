@@ -36,6 +36,8 @@ local bkg_image
 local playButton
 local creditsButton
 local instructionsButton
+local bkgMusic = audio.loadSound("Sounds/BKG Music.mp3")
+
 
 -----------------------------------------------------------------------------------------
 -- LOCAL FUNCTIONS
@@ -94,8 +96,10 @@ function scene:create( event )
     playButton = widget.newButton( 
         {   
             -- Set its position on the screen relative to the screen size
-            x = display.contentWidth/2,
-            y = display.contentHeight*7/8,
+            x = display.contentWidth*7/8,
+            y = display.contentHeight*3/4,
+            width = 200,
+            height = 100,
 
             -- Insert the images here
             defaultFile = "Images/Start Button Unpressed.png",
@@ -112,7 +116,9 @@ function scene:create( event )
         {
             -- Set its position on the screen relative to the screen size
             x = display.contentWidth*7/8,
-            y = display.contentHeight*7/8,
+            y = display.contentHeight*1/4,
+            width = 200,
+            height = 100,
 
             -- Insert the images here
             defaultFile = "Images/Credits Button Unpressed.png",
@@ -126,8 +132,10 @@ function scene:create( event )
     instructionsButton = widget.newButton( 
         {
             -- Set its position on the screen relative to the screen size
-            x = display.contentWidth*1/8,
-            y = display.contentHeight*7/8,
+            x = display.contentWidth*7/8,
+            y = display.contentHeight*2/4,
+            width = 200,
+            height = 100,
 
             -- Insert the images here
             defaultFile = "Images/Instructions Button Unpressed.png",
@@ -143,6 +151,7 @@ function scene:create( event )
     sceneGroup:insert( playButton )
     sceneGroup:insert( creditsButton )
     sceneGroup:insert( instructionsButton )
+    audio.play(bkgMusic) 
     
 
 end -- function scene:create( event )   
