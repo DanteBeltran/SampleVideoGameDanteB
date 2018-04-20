@@ -1,8 +1,8 @@
 -----------------------------------------------------------------------------------------
 --
 -- main_menu.lua
--- Created by: Your Name
--- Date: Month Day, Year
+-- Created by: Dante B
+-- Date: 2018-04-10
 -- Description: This is the main menu, displaying the credits, instructions & play buttons.
 -----------------------------------------------------------------------------------------
 
@@ -45,20 +45,20 @@ local bkgMusic = audio.loadSound("Sounds/BKG Music.mp3")
 
 -- Creating Transition Function to Credits Page
 local function CreditsTransition( )       
-    composer.gotoScene( "credits_screen", {effect = "flipFadeOutIn", time = 500})
+    composer.gotoScene( "credits_screen", {effect = "crossFade", time = 500})
 end 
 
 -----------------------------------------------------------------------------------------
 
 -- Creating Transition to Level1 Screen
 local function Level1ScreenTransition( )
-    composer.gotoScene( "level1_screen", {effect = "zoomInOutFade", time = 1000})
+    composer.gotoScene( "level1_screen", {effect = "flip", time = 1000})
 end    
 
 -----------------------------------------------------------------------------------------
 
 local function InstructionsTransition( )
-    composer.gotoScene( "instructions_screen", {effect = "zoomInOutFade", time = 1000})
+    composer.gotoScene( "instructions_screen", {effect = "fromRight", time = 1000})
 end
 -----------------------------------------------------------------------------------------
 -- GLOBAL SCENE FUNCTIONS
@@ -237,6 +237,8 @@ scene:addEventListener( "create", scene )
 scene:addEventListener( "show", scene )
 scene:addEventListener( "hide", scene )
 scene:addEventListener( "destroy", scene )
+audio.play(bkgMusic) 
+
 
 -----------------------------------------------------------------------------------------
 

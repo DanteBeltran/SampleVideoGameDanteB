@@ -24,20 +24,22 @@ local scene = composer.newScene( sceneName )
 -----------------------------------------------------------------------------------------
  
 -- The local variables for this scene
-local beetleship
+local terry
 local scrollXSpeed = 17
 local scrollYSpeed = -3
 local powerSound = audio.loadSound("Sounds/power sound effect.mp3")
 local jungleSoundsChannel
 
+
 --------------------------------------------------------------------------------------------
 -- LOCAL FUNCTIONS
 --------------------------------------------------------------------------------------------
 
--- The function that moves the beetleship across the screen
-local function moveBeetleship()
-    beetleship.x = beetleship.x + scrollXSpeed
-    beetleship.y = beetleship.y + scrollYSpeed
+-- The function that moves the terry across the screen
+local function moveTerry()
+    terry.x = terry.x + scrollXSpeed
+    terry.y = terry.y + scrollYSpeed
+    terry:rotate(20)
 end
 
 -- The function that will go to the main menu 
@@ -58,15 +60,15 @@ function scene:create( event )
     -- set the background to be black
     display.setDefault("background", 0, 0, 0)
 
-    -- Insert the beetleship image
-    beetleship = display.newImageRect("Images/beetleship.png", 1000, 500)
+    -- Insert the terry image
+    terry = display.newImageRect("Images/terry.png", 1000, 500)
 
-    -- set the initial x and y position of the beetleship
-    beetleship.x = 100
-    beetleship.y = display.contentHeight/2
+    -- set the initial x and y position of the terry
+    terry.x = 100
+    terry.y = display.contentHeight/2
 
     -- Insert objects into the scene group in order to ONLY be associated with this scene
-    sceneGroup:insert( beetleship )
+    sceneGroup:insert( terry )
 
 end -- function scene:create( event )
 
@@ -94,7 +96,7 @@ function scene:show( event )
         jungleSoundsChannel = audio.play(powerSound )
 
         -- Call the moveBeetleship function as soon as we enter the frame.
-        Runtime:addEventListener("enterFrame", moveBeetleship)
+        Runtime:addEventListener("enterFrame", moveTerry)
 
         -- Go to the main menu screen after the given time.
         timer.performWithDelay ( 3000, gotoMainMenu)          

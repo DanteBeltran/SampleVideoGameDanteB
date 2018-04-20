@@ -1,9 +1,9 @@
 -----------------------------------------------------------------------------------------
 --
 -- instructions_screen.lua
--- Created by: Your Name
+-- Created by: Dante B
 -- Special thanks to Wal Wal for helping in the design of this framework.
--- Date: Month Day, Year
+-- Date: 2018-04-10
 -- Description: This is the instruction page, displaying a back button to the main menu.
 -----------------------------------------------------------------------------------------
 
